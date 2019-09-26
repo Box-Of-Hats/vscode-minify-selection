@@ -3,6 +3,10 @@
 Minify just some selected code instead of an entire file.
 
 
+## Commands:
+
+- `Minify Selection: Minify Selected CSS`
+
 ## Language support
 
 ### CSS
