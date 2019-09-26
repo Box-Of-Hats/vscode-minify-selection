@@ -2,7 +2,7 @@
     "name": "minify-selection",
     "displayName": "Minify selection",
     "description": "Minify just your selection",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "author": {
         "name": "box-of-hats",
         "url": "https://github.com/Box-Of-Hats",
@@ -15,7 +15,7 @@
     "categories": [
         "Other"
     ],
-    "icon": "./img/icon.png",
+    "icon": "img/icon.png",
     "repository": {
         "url": "https://github.com/Box-Of-Hats/vscode-minify-selection.git"
     },
