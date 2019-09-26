@@ -17,9 +17,7 @@ function minifySelectedCss() {
     let minified = output.styles;
 
     if (minified === "") {
-        vscode.window.showErrorMessage(
-            `Unsupported language: ${textEditor.document.languageId}`
-        );
+        vscode.window.showErrorMessage(`Could not minify selection`);
         return;
     }
 
