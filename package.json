@@ -15,6 +15,7 @@
     "categories": [
         "Other"
     ],
+    "icon": "./img/icon.png",
     "repository": {
         "url": "https://github.com/Box-Of-Hats/vscode-minify-selection.git"
     },
