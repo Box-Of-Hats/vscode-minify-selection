@@ -25,7 +25,8 @@
         "commands": [
             {
                 "command": "extension.minifySelection.minifySelectedCSS",
-                "title": "Minify Selection: Minify Selected CSS"
+                "title": "Minify Selection: Minify Selected CSS",
+                "enablement": "editorLangId == css || editorLangId == html"
             }
         ]
     },

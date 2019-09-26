@@ -6,7 +6,7 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.commands.registerCommand(
             "extension.minifySelection.minifySelectedCSS",
             () => {
-                minifySelectionCommandProvider.minifySelection();
+                minifySelectionCommandProvider.minifySelectedCss();
             }
         )
     );

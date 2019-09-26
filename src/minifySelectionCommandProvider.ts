@@ -4,7 +4,7 @@ var CleanCSS = require("clean-css");
 const UglifyJs = require("uglify-js");
 const minifyHtml = require("html-minifier").minify;
 
-function minifySelection() {
+function minifySelectedCss() {
     let textEditor = vscode.window.activeTextEditor;
     if (!textEditor) {
         vscode.window.showErrorMessage("No active text editor found.");
@@ -12,20 +12,9 @@ function minifySelection() {
     }
     let selectedText = textEditor.document.getText(textEditor.selection);
 
-    let minified = "";
-
-    //CSS
-    switch (textEditor.document.languageId) {
-        case "css":
-        case "html":
-            let options = {};
-            let output = new CleanCSS(options).minify(selectedText);
-            minified = output.styles;
-            break;
-
-        default:
-            break;
-    }
+    let options = {};
+    let output = new CleanCSS(options).minify(selectedText);
+    let minified = output.styles;
 
     if (minified === "") {
         vscode.window.showErrorMessage(
@@ -38,4 +27,4 @@ function minifySelection() {
     textEditor.insertSnippet(snippet);
 }
 
-export { minifySelection };
+export { minifySelectedCss };
