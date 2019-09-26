@@ -15,6 +15,9 @@
     "categories": [
         "Other"
     ],
+    "repository": {
+        "url": "https://github.com/Box-Of-Hats/vscode-minify-selection.git"
+    },
     "activationEvents": [
         "onCommand:extension.minifySelection.minifySelection",
         "onLanguage:css",
