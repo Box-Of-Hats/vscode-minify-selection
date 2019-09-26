@@ -1,7 +1,7 @@
 {
     "name": "minify-selection",
     "displayName": "Minify selection",
-    "description": "Minify just your selection",
+    "description": "Minify just your selected code.",
     "version": "0.0.2",
     "author": {
         "name": "box-of-hats",
