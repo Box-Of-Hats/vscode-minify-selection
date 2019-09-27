@@ -20,7 +20,8 @@
         "url": "https://github.com/Box-Of-Hats/vscode-minify-selection.git"
     },
     "activationEvents": [
-        "onCommand:extension.minifySelection.minifySelection",
+        "onCommand:extension.minifySelection.minifySelectedCss",
+        "onCommand:extension.minifySelection.minifySelectedJs",
         "onLanguage:css",
         "onLanguage:html"
     ],
@@ -28,9 +29,12 @@
     "contributes": {
         "commands": [
             {
-                "command": "extension.minifySelection.minifySelectedCSS",
-                "title": "Minify Selection: Minify Selected CSS",
-                "enablement": "editorLangId == css || editorLangId == html"
+                "command": "extension.minifySelection.minifySelectedCss",
+                "title": "Minify Selection: Minify Selected CSS"
+            },
+            {
+                "command": "extension.minifySelection.minifySelectedJs",
+                "title": "Minify Selection: Minify Selected JS"
             }
         ]
     },

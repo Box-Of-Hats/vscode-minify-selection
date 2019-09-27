@@ -4,9 +4,15 @@ import * as minifySelectionCommandProvider from "./minifySelectionCommandProvide
 export function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(
         vscode.commands.registerCommand(
-            "extension.minifySelection.minifySelectedCSS",
+            "extension.minifySelection.minifySelectedCss",
             () => {
                 minifySelectionCommandProvider.minifySelection("css");
+            }
+        ),
+        vscode.commands.registerCommand(
+            "extension.minifySelection.minifySelectedJs",
+            () => {
+                minifySelectionCommandProvider.minifySelection("javascript");
             }
         )
     );

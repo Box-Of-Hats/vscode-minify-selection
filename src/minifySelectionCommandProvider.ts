@@ -2,7 +2,6 @@ import * as vscode from "vscode";
 
 var CleanCSS = require("clean-css");
 const UglifyJs = require("uglify-js");
-const minifyHtml = require("html-minifier").minify;
 
 function minifySelection(language: string) {
     let textEditor = vscode.window.activeTextEditor;
@@ -12,11 +11,24 @@ function minifySelection(language: string) {
     }
     let selectedText = textEditor.document.getText(textEditor.selection);
     let minified = "";
+    let options = {};
     switch (language) {
         case "css":
-            let options = {};
+            options = {};
             let output = new CleanCSS(options).minify(selectedText);
             minified = output.styles;
+            break;
+
+        case "javascript":
+            var minifyResult = UglifyJs.minify(selectedText);
+            if (minifyResult.error) {
+                vscode.window.showErrorMessage(
+                    `Could not minify JS: ${minifyResult.error}`
+                );
+                return;
+            }
+
+            minified = minifyResult.code;
             break;
 
         default:
