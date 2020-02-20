@@ -14,6 +14,8 @@ function minifySelection(language: string) {
     let options = {};
     switch (language) {
         case "css":
+        case "scss":
+        case "less":
             options = {};
             let output = new CleanCSS(options).minify(selectedText);
             minified = output.styles;
